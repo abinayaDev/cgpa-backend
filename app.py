@@ -48,7 +48,12 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
 
 # Initialize Supabase with service role key (backend only)
+if not SUPABASE_URL or not SUPABASE_KEY:
+    raise RuntimeError("Supabase credentials are missing. Check Render environment variables.")
+
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+
 
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
