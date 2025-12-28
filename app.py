@@ -16,8 +16,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-print("FLASK_ENV =", os.getenv("FLASK_ENV"))
-print("FRONTEND_URL =", os.getenv("FRONTEND_URL"))
+
 
 
 # Security: Configure CORS - Allow all origins in development, restrict in production
