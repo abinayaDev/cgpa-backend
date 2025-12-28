@@ -1,0 +1,9 @@
+flask
+flask-cors
+pandas
+openpyxl
+supabase
+python-dotenv
+numpy
+flask-limiter
+gunicorn
